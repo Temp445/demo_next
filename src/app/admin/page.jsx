@@ -158,7 +158,7 @@ const Dashboard = () => {
                   </Link>
                   <div className="flex gap-2">
                     <Link
-                      href={`/product/edit/${product._id}`}
+                      href={`/admin/edit/${product._id}`}
                       className="bg-gray-100 text-gray-700 p-2 rounded-full hover:bg-gray-200 transition"
                       title="Edit Product"
                     >
