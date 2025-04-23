@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 import AboutPage1 from "../../../components/AboutPage1";
 import Header1 from "../../../components/Header1";
 import Header from "../../../components/Header";
+import ClientCarousel from "@/components/Clients";
+import ContactUs from "@/components/Contact";
 
 
 
@@ -146,16 +148,18 @@ const ProductDetails = () => {
 
   return (
     <div>
-      {showNavbar && (
-         <div className="">
-         <Header1/>
-         </div>
-        )}
-    {showNavbar1 && (
-         <div className="">
+       {showNavbar1 && (
+         <div>
          <Header/>
          </div>
         )}
+
+      {showNavbar && (
+         <div>
+         <Header1/>
+         </div>
+        )}
+   
 
     <div className="container mx-auto  p-2 sm:p-6 overflow-hidden">
        
@@ -215,19 +219,34 @@ const ProductDetails = () => {
 
         {product.productLink ? (
   <button
-    className="bg-black text-[13px] px-2 md:px-4 md:py-2 md:text-sm rounded-lg mt-5 text-white hover:bg-cyan-500 transition duration-300 hover:scale-105"
+    className="bg-black text-[13px] md:ml-1 px-2 md:px-4 md:py-2 md:text-sm rounded-lg mt-5 text-white hover:bg-cyan-500 transition duration-300 hover:scale-105"
     onClick={() => window.open(product.productLink, "_blank")}
   >
     Try Now
   </button>
 ) : null }
 
-            <button
-              className="bg-blue-500 text-[13px] md:text-sm px-4 py-2 rounded-lg mt-5 text-white hover:bg-blue-700 transition hover:scale-105"
-              onClick={() => navigate.push("/contact")}
+           
+
+            {showNavbar1 && (
+          <button
+              className="bg-blue-500 text-[13px] md:text-sm md:ml-1 px-4 py-2 rounded-lg mt-5 text-white hover:bg-blue-700 transition hover:scale-105"
+              onClick={() => router.push("/contact")}
             >
               Book A Demo
             </button>
+
+        )}
+          {showNavbar && (
+
+          <button
+              className="bg-blue-500 text-[13px] md:text-sm md:ml-1 px-4 py-2 rounded-lg mt-5 text-white hover:bg-blue-700 transition hover:scale-105"
+              onClick={() => router.push("#contact")}
+            >
+              Book A Demo
+            </button>
+        )}
+
           </div>
         </motion.div>
 
@@ -631,6 +650,18 @@ const ProductDetails = () => {
       {showAbout && (
          <div className="mt-32">
          <AboutPage1/>
+         </div>
+        )}
+
+{showAbout && (
+         <div className="mt-32">
+        <ClientCarousel/>
+         </div>
+        )}
+
+{showAbout && (
+         <div className="mt-32">
+         <ContactUs/>
          </div>
         )}
 

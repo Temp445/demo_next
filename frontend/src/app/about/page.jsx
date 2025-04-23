@@ -14,9 +14,9 @@ import Values from "../../assets/Images/values.png";
 import Mission from "../../assets/Images/mission.png";
 import Pic1 from "../../assets/Images/Rajagopalan.png";
 import Pic2 from "../../assets/Images/Rajasekaran.jpg";
-import Pic3 from "../../assets/Images/ABILASH1.png";
+import Pic3 from "../../assets/Images/Abilash.png";
 import Pic4 from "../../assets/Images/Abishek.png";
-import Pic5 from "../../assets/Images/Anandh.jpg";
+import Pic5 from "../../assets/Images/Anandh1.jpg";
 import { FaUserTie } from "react-icons/fa6";
 
 import Count from "../../components/Count";

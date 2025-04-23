@@ -13,9 +13,9 @@ import Values from "../assets/Images/values.png";
 import Mission from "../assets/Images/mission.png";
 import Pic1 from "../assets/Images/Rajagopalan.png";
 import Pic2 from "../assets/Images/Rajasekaran.jpg";
-import Pic3 from "../assets/Images/ABILASH1.png";
+import Pic3 from "../assets/Images/Abilash.png";
 import Pic4 from "../assets/Images/Abishek.png";
-import Pic5 from "../assets/Images/Anandh.jpg";
+import Pic5 from "../assets/Images/Anandh1.jpg";
 import { FaUserTie } from "react-icons/fa6";
 
 import Image from "next/image";
@@ -57,7 +57,7 @@ const AboutPage1 = () => {
   };
 
   return (
-    <div className="container w-full mx-auto">
+    <div className="container w-full mx-auto" id="about">
       <motion.div 
         className=" w-full mx-auto justify-center text-blue items-center text-center text-3xl overflow-hidden z-10 rounded-2xl font-extrabold underline underline-offset-4" >
        About Us

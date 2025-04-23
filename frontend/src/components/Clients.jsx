@@ -1,8 +1,6 @@
 'use client'
 
-import { useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from "next/image";
 
 import img1 from "../assets/ClientImages/image-1.png";
