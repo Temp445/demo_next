@@ -103,7 +103,6 @@ const HomePage = () => {
   return (
     <div className="w-full mx-auto justify-center items-center xxl:container">
  
-      
       {/* Hero Section*/}
       <motion.section 
         ref={heroRef}
@@ -278,7 +277,7 @@ const HomePage = () => {
             variants={fadeIn}
             className="text-center text-xl  sm:text-xl md:text-2xl lg:text-2xl font-bold mb-6 sm:mb-8 lg:mb-10"
           >
-            Our Products
+            Our Products 
           </motion.h1>
           
           {/* CMS Feature */}
@@ -295,7 +294,7 @@ const HomePage = () => {
               
               <motion.div 
                 variants={scaleUp}
-                className="w-full  mx-auto md:hidden mb-4"
+                className="w-full px-10 sm:px-0  mx-auto md:hidden mb-4"
               >
                 <Image
                   src={CMS}

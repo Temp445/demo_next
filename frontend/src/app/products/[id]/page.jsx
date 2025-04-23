@@ -8,7 +8,7 @@ import { TiArrowForward } from "react-icons/ti";
 import { FaCircleDot } from "react-icons/fa6";
 import { MdOutlineSubdirectoryArrowRight } from "react-icons/md";
 import { motion } from "framer-motion";
-
+import AboutPage1 from "../../../components/AboutPage1";
 
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -96,7 +96,7 @@ const ProductDetails = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center w-full mx-auto h-96">
+      <div className="flex justify-center items-center h-96">
         <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-black"></div>
       </div>
     );
@@ -203,7 +203,7 @@ const ProductDetails = () => {
 ) : null }
 
             <button
-              className="bg-blue-500 text-[13px] md:text-sm md:ml-1 px-4 py-2 rounded-lg mt-5 text-white hover:bg-blue-700 transition hover:scale-105"
+              className="bg-blue-500 text-[13px] md:text-sm px-4 py-2 rounded-lg mt-5 text-white hover:bg-blue-700 transition hover:scale-105"
               onClick={() => navigate.push("/contact")}
             >
               Book A Demo
@@ -608,7 +608,11 @@ const ProductDetails = () => {
       ): null}
 
 
-  
+      {showAbout && (
+         <div className="mt-32">
+         <AboutPage1/>
+         </div>
+        )}
 
     </div>
     </div>
