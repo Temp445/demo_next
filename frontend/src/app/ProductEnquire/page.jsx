@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import Header from "@/components/Header";
 
 export default function ProductEnquire() {
   const [loading, setLoading] = useState(false);
@@ -89,6 +90,7 @@ export default function ProductEnquire() {
 
   return (
     <div>
+      <Header/>
       <div className="min-h-screen py-12 px-2 sm:px-4">
       <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-4 sm:p-8 border border-gray-200">
         <h1 className="md:text-3xl font-semibold text-center mb-6">

@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Header from "@/components/Header";
 const HomePage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -102,7 +103,7 @@ const HomePage = () => {
   
   return (
     <div className="w-full mx-auto justify-center items-center xxl:container">
- 
+       <Header/>
       {/* Hero Section*/}
       <motion.section 
         ref={heroRef}

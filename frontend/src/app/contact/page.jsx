@@ -10,6 +10,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6"; 
 import emailjs from "@emailjs/browser";
 import { MdOutlineSendToMobile } from "react-icons/md";
+import Header from "@/components/Header";
 const ContactUs = () => {
   const form = useRef();
   const [emailError, setEmailError] = useState("");
@@ -61,6 +62,7 @@ const ContactUs = () => {
 
   return (
     <div>
+      <Header/>
       <div className=" mt-0 px-2 ">
       <h2 className=" sm:hidden w-full mx-auto text-center mt-10 mb-5 font-semibold underline text-xl">Contact Us</h2>
         <div className="flex flex-col md:flex-row p-10 rounded-lg border md:border-0 max-w-6xl mx-auto sm:mt-20 mb-20 justify-center">

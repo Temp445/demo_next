@@ -5,6 +5,7 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import Header from "@/components/Header";
 
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -74,11 +75,12 @@ const ProductsPage = () => {
 
   // Navigate with state
   const goToProduct = (productId) => {
-    router.push(`/products/${productId}`, { state: { fromProductsPage: true } });
+    router.push(`/products/${productId}?fromProductsPage=true`);
   };
 
   return (
    <div>
+    <Header/>
      <div className="min-h-screen h-full 2xl:container w-full mx-auto">
       <div className="w-full h-50 bg-[#FFF5F5] flex flex-col items-center justify-center text-center p-6 mb-3 2xl:rounded-5">
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">

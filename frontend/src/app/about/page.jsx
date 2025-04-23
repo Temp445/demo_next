@@ -21,6 +21,7 @@ import { FaUserTie } from "react-icons/fa6";
 
 import Count from "../../components/Count";
 import Image from "next/image";
+import Header from "@/components/Header";
 
 const AboutPage = () => {
 
@@ -64,6 +65,7 @@ const AboutPage = () => {
   return (
     
     <div>
+      <Header/>
        <div className="xxl:container w-full mx-auto">
       <motion.div 
         initial={{ opacity: 0 }}

@@ -2,21 +2,26 @@
 
 import React, { useEffect, useState } from "react";
 // import { useParams, useNavigate, useLocation, Link } from "react-router-dom";
-import { useParams, useRouter, usePathname } from 'next/navigation'
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import axios from "axios";
 import { TiArrowForward } from "react-icons/ti";
 import { FaCircleDot } from "react-icons/fa6";
 import { MdOutlineSubdirectoryArrowRight } from "react-icons/md";
 import { motion } from "framer-motion";
 import AboutPage1 from "../../../components/AboutPage1";
+import Header1 from "../../../components/Header1";
+import Header from "../../../components/Header";
+
 
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 const ProductDetails = () => {
-  const { id } = useParams();
-  const navigate = useRouter();
-  const pathname = usePathname();
+  const params = useParams();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const id = params.id;
+
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -24,6 +29,8 @@ const ProductDetails = () => {
   const [hoveredBenefitIndex, setHoveredBenefitIndex] = useState(null);
   const [showOtherProducts, setshowOtherProducts] = useState(false);
   const [showNavbar, setshowNavbar] = useState(true);
+  const [showNavbar1, setshowNavbar1] = useState(true);
+
   const [showAbout, setShowAbout] = useState(false);
 
     useEffect(() => {
@@ -31,18 +38,22 @@ const ProductDetails = () => {
     }, []);
 
  
-  useEffect(() => {
-    fetchProduct();
-    if (!pathname.state || !pathname.state.fromProductsPage) {
-      setshowOtherProducts(true);
-      setshowNavbar(false);
-      setShowAbout(true);
-    } else {
-      setshowOtherProducts(false); 
-      setshowNavbar(true);
-      setShowAbout(false);
-    }
-  }, [id, pathname]);
+    useEffect(() => {
+      fetchProduct();
+      const fromProductsPage = searchParams.get('fromProductsPage') === 'true';
+      
+      if (!fromProductsPage) {
+        setshowOtherProducts(true);
+        setshowNavbar(true);
+        setshowNavbar1(false);
+        setShowAbout(true);
+      } else {
+        setshowOtherProducts(false); 
+        setshowNavbar(false);
+        setshowNavbar1(true);
+        setShowAbout(false);
+      }
+    }, [id, searchParams]);
 
   useEffect(() => {
     if (!product) return;
@@ -135,7 +146,16 @@ const ProductDetails = () => {
 
   return (
     <div>
-   
+      {showNavbar && (
+         <div className="">
+         <Header1/>
+         </div>
+        )}
+    {showNavbar1 && (
+         <div className="">
+         <Header/>
+         </div>
+        )}
 
     <div className="container mx-auto  p-2 sm:p-6 overflow-hidden">
        

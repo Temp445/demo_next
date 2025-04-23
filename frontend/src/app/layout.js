@@ -1,7 +1,6 @@
 
 import "./globals.css";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import BackToTop from "@/components/BackToTop";
 
 
@@ -17,7 +16,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
        <link rel="icon" href="/AceLogo.png" />
       <body>
-          <Header/>
         {children}
         <BackToTop/>
         <Footer/>
