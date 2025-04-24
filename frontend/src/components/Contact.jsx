@@ -62,8 +62,8 @@ const ContactUs = () => {
   return (
     <div>
       <div className=" mt-0 px-2 " id="contact" >
-      <h2 className=" w-full mx-auto text-center mt-10 mb-5 font-semibold underline text-xl md:no-underline md:mb-0 md:text-3xl">Contact <span className="text-blue-500">Us</span></h2>
-        <div className="flex flex-col md:flex-row p-10 rounded-lg border md:border-0 max-w-6xl mx-auto sm:mt-10 mb-20 justify-center">
+      <h2 className=" w-full mx-auto text-center mt-0 mb-5 font-semibold  text-xl  md:mb-0 md:text-3xl">Contact <span className="text-blue-500">Us</span></h2>
+        <div className="flex flex-col md:flex-row p-10 rounded-lg border md:border-gray-300 max-w-8xl mx-auto sm:mt-10 mb-20 justify-center">
           {/* Left */}
           <div className="md:w-2/3">
             <h2 className="text-lg md:text-3xl font-semibold text-gray-800 mb-6">
@@ -172,7 +172,7 @@ const ContactUs = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-[#F7666F] text-white px-4 py-2 rounded hover:bg-green-500"
+                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-green-500"
               >
                 {loading ? "Submitting..." : "Submit"}
               </button>
@@ -250,8 +250,8 @@ const ContactUs = () => {
       </div>
 
       {/* Contact Info */}
-      <div className="flex flex-col lg:flex-row justify-center lg:justify-evenly lg:px-20 items-center gap-6 md:gap-5 lg:gap-5 lg:h-100 px-10 md:px-5 lg:hidden">
-        <div className="flex flex-row items-center gap-5 w-full max-w-xs border p-4 rounded-lg shadow-md">
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-evenly lg:px-20 items-center gap-6 md:gap-5 lg:gap-5 lg:h-100 px-2 md:px-5 lg:hidden">
+        <div className="flex flex-row items-center gap-5 w-full  border p-4 rounded-lg shadow-md">
           <TbPhoneCall className="text-2xl text-red-400 -mt-15" />
           <div>
             <p className="text-sm font-medium text-gray-500">Call Us</p>
@@ -261,7 +261,7 @@ Mobile - 97109 46806</p>
           </div>
         </div>
 
-        <div className="flex flex-row items-center gap-5 w-full max-w-xs border p-4 rounded-lg shadow-md">
+        <div className="flex flex-row items-center gap-5 w-full  border p-4 rounded-lg shadow-md">
           <MdOutlineMail className="text-2xl text-red-400" />
           <div>
             <p className="text-sm font-medium text-gray-500">Email Us</p>
@@ -269,7 +269,7 @@ Mobile - 97109 46806</p>
           </div>
         </div>
 
-        <div className="flex flex-row  gap-5 w-full max-w-xs border p-4 rounded-lg shadow-md ">
+        <div className="flex flex-row  gap-5 w-full border p-4 rounded-lg shadow-md ">
           <IoLocationOutline className="text-6xl text-red-400 text-bold -mt-5" />
           <div>
             <p className="text-sm font-medium text-gray-500">Visit Us</p>

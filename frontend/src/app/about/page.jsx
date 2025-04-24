@@ -149,7 +149,7 @@ const AboutPage = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="flex flex-wrap justify-evenly w-full px-10 xl:mt-10 gap-10 py-20"
+        className="flex flex-wrap justify-evenly w-full md:px-10 xl:mt-10 gap-10 py-5 md:py-20"
       >
         {[
           { img: Vision, 
@@ -241,7 +241,7 @@ const AboutPage = () => {
   Our Leadership Team
   </h1>
 
-  <div className="lg:mt-0 px-5">
+  <div className="lg:mt-0 md:px-5">
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 lg:gap-3">
       {[
         {

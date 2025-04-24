@@ -20,6 +20,7 @@ exports.getProductById = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
 exports.getProductByName = async (req, res) => {
   try {
       const { productName } = req.params; 

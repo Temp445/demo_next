@@ -57,19 +57,27 @@ const AboutPage1 = () => {
   };
 
   return (
-    <div className="container w-full mx-auto" id="about">
-      <motion.div 
-        className=" w-full mx-auto justify-center text-blue items-center text-center text-3xl overflow-hidden z-10 rounded-2xl font-extrabold underline underline-offset-4" >
-       About Us
-       
-      </motion.div>
+    <div className="container w-full mx-auto " id="about">
+
+<motion.h1
+            className=" w-full mx-auto justify-center text-blue items-center text-center text-2xl overflow-hidden z-10 rounded-2xl font-extrabold  relative inline-block"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}  >
+            About Us
+            <motion.div
+              className="h-1 w-2 bg-blue-500 mx-auto mt-1 rounded-full"
+              initial={{ width: 0 }}
+              whileInView={{ width: "60px" }}
+              transition={{ delay: 0.3, duration: 0.6 }} />
+          </motion.h1>
 
       <motion.div 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="flex-wrap mt-10 text-justify sm:text-center justify-center px-5 lg:px-20 2xl:px-40 h-auto py-5 xl:mt-10"
+        className="flex-wrap mt-4 text-justify sm:text-center justify-center px-5 lg:px-20 2xl:px-40 h-auto py-5 xl:mt-10"
       >
 
 <motion.p variants={itemVariants} className="py-2 text-[12px] sm:text-[16px] lg:text-lg">
@@ -117,7 +125,7 @@ const AboutPage1 = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="flex flex-wrap justify-evenly w-full px-10 xl:mt-10 gap-10 py-20"
+        className="flex flex-wrap justify-evenly w-full  md:px-10 xl:mt-10 gap-10 py-5 md:py-20"
       >
         {[
           { img: Vision, 
@@ -144,7 +152,7 @@ const AboutPage1 = () => {
         ))}
       </motion.div> 
 
-      <div className="mt-10">
+      <div className="mt-0 mb-5 md:mt-10">
         <Count1/>
       </div>
 
@@ -209,7 +217,7 @@ const AboutPage1 = () => {
   Our Leadership Team
   </h1>
 
-  <div className="lg:mt-0 px-5">
+  <div className="lg:mt-0 px-8">
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 lg:gap-3">
       {[
         {
@@ -250,7 +258,7 @@ const AboutPage1 = () => {
       ].map((leader, index) => (
         <div
           key={index}
-          className="w-full bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:scale-105 my-10"
+          className="w-full bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:scale-105 md:my-10"
         >
           <div className="flex flex-col items-center p-5">
             <div className="w-32 h-32 rounded-full overflow-hidden  shadow-lg shadow-gray-300 ">
@@ -277,12 +285,7 @@ const AboutPage1 = () => {
     </div>
   </div>
 </div>
-
-
-
-
-
-    </div>
+</div>
   );
 };
 

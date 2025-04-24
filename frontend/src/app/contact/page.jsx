@@ -252,8 +252,8 @@ const ContactUs = () => {
       </div>
 
       {/* Contact Info */}
-      <div className="flex flex-col lg:flex-row justify-center lg:justify-evenly lg:px-20 items-center gap-6 md:gap-5 lg:gap-5 lg:h-100 px-10 md:px-5 lg:hidden">
-        <div className="flex flex-row items-center gap-5 w-full max-w-xs border p-4 rounded-lg shadow-md">
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-evenly lg:px-20 items-center gap-6 md:gap-5 lg:gap-5 lg:h-100 px-2 md:px-5 lg:hidden">
+        <div className="flex flex-row items-center gap-5 w-full border p-4 rounded-lg shadow-md">
           <TbPhoneCall className="text-2xl text-red-400 -mt-15" />
           <div>
             <p className="text-sm font-medium text-gray-500">Call Us</p>
@@ -263,7 +263,7 @@ Mobile - 97109 46806</p>
           </div>
         </div>
 
-        <div className="flex flex-row items-center gap-5 w-full max-w-xs border p-4 rounded-lg shadow-md">
+        <div className="flex flex-row items-center gap-5 w-full border p-4 rounded-lg shadow-md">
           <MdOutlineMail className="text-2xl text-red-400" />
           <div>
             <p className="text-sm font-medium text-gray-500">Email Us</p>
@@ -271,7 +271,7 @@ Mobile - 97109 46806</p>
           </div>
         </div>
 
-        <div className="flex flex-row  gap-5 w-full max-w-xs border p-4 rounded-lg shadow-md ">
+        <div className="flex flex-row  gap-5 w-full border p-4 rounded-lg shadow-md ">
           <IoLocationOutline className="text-6xl text-red-400 text-bold -mt-5" />
           <div>
             <p className="text-sm font-medium text-gray-500">Visit Us</p>

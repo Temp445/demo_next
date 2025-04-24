@@ -24,10 +24,6 @@ function classNames(...classes) {
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   
-  const handleNavigation = () => {
-    // Close the mobile menu when a link is clicked
-    setIsOpen(false);
-  };
 
   return (
    <div className='w-full z-50 px-1 sm:px-6'>

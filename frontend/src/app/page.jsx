@@ -119,9 +119,9 @@ const HomePage = () => {
             <motion.h1 
               variants={fadeIn}
               custom={0}
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#F7666F] text-left lg:text-left mb-4 sm:mb-6 lg:h-28 overflow-hidden"
+              className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#F7666F] text-left lg:text-left mb-4 sm:mb-6 lg:h-28 overflow-hidden"
             >
-              Great Product is built <br className="hidden lg:block" />
+              Great Product is built <br className="block" />
               <span className="text-[#403D3D]">by great teams</span>
             </motion.h1>
 
@@ -155,9 +155,9 @@ const HomePage = () => {
               whileTap="tap"
               className="self-start"
             >
-              <Link href="/contact" className="flex items-start mt-1 mb-2 sm:mt-4 lg:mt-6 xl:mt-8  py-2 gap-2 text-sm md:text-lg md:text-bold lg:font-extrabold xl:text-2xl text-[#F7666F] font-bold transition-all">
+              <Link href="/contact" className="flex items-start mt-1 mb-2 sm:mt-4 lg:mt-6 xl:mt-8  py-2 gap-2 text-lg md:text-lg md:text-bold lg:font-extrabold xl:text-2xl text-[#F7666F] font-bold transition-all">
                 Contact Us{" "}
-                <BiSolidRightArrowSquare className=" md:mt-1 text-lg md:text-xl lg:text-2xl" />
+                <BiSolidRightArrowSquare className="mt-1 text-lg md:text-xl lg:text-2xl" />
               </Link>
             </motion.div>
           </motion.div>
@@ -429,6 +429,25 @@ const HomePage = () => {
         </motion.div>
       </motion.div>
 
+      <div className="w-full max-w-6xl lg:max-w-7xl mx-auto px-6 md:px-32 py-8 md:py-10  bg-red-50 md:rounded-xl ">
+      <div className="h-[320px] md:h-96 flex flex-col items-center justify-centerborder bg-white border-gray-300 rounded-xl  p-8 shadow-lg relative">
+        <div className="w-20 h-1 rounded-2xl justify-center bg-red-400"></div>
+        <h1 className=" text-xl md:text-3xl font-extrabold text-center text-gray-800 mb-6 mt-8 md:mt-14  ">
+          Ready to Transform Your Business?
+        </h1>
+        
+        <p className="text-[12px] md:text-lg text-center text-gray-600 max-w-3xl mb-10  ">
+          Schedule a personalized demo to see how our solutions can address your specific challenges and drive growth for your business.
+        </p>
+        
+        <Link 
+          href="/contact" 
+          className="inline-flex md:mt-8 text-sm md:text-lg items-center justify-center px-6 py-3 border border-red-500  font-medium rounded-full hover:bg-red-700 hover:text-white transition-colors duration-200 shadow-lg "
+        >
+          Book a Demo Now
+        </Link>
+      </div>
+    </div>
      
       {/* Client Carousel */}
       <motion.div

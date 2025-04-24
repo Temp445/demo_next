@@ -75,7 +75,7 @@ const ProductsPage = () => {
 
   // Navigate with state
   const goToProduct = (productId) => {
-    router.push(`/products/${productId}?fromProductsPage=true`);
+    router.push(`/products/${productId}?fromProducts=true`);
   };
 
   return (

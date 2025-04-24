@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
-// import { useParams, useNavigate, useLocation, Link } from "react-router-dom";
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import axios from "axios";
 import { TiArrowForward } from "react-icons/ti";
@@ -11,7 +10,6 @@ import { motion } from "framer-motion";
 import AboutPage1 from "../../../components/AboutPage1";
 import Header1 from "../../../components/Header1";
 import Header from "../../../components/Header";
-import ClientCarousel from "@/components/Clients";
 import ContactUs from "@/components/Contact";
 
 
@@ -42,7 +40,7 @@ const ProductDetails = () => {
  
     useEffect(() => {
       fetchProduct();
-      const fromProductsPage = searchParams.get('fromProductsPage') === 'true';
+      const fromProductsPage = searchParams.get('fromProducts') === 'true';
       
       if (!fromProductsPage) {
         setshowOtherProducts(true);
@@ -439,7 +437,7 @@ const ProductDetails = () => {
         />
       </motion.h1>
       <motion.div
-        className="flex flex-wrap gap-4 justify-center py-10"
+        className="flex flex-wrap gap-4 justify-center py-10 px-3"
         variants={stagger}
       >
         {productImages.map((img, index) => (
@@ -653,11 +651,6 @@ const ProductDetails = () => {
          </div>
         )}
 
-{showAbout && (
-         <div className="mt-32">
-        <ClientCarousel/>
-         </div>
-        )}
 
 {showAbout && (
          <div className="mt-32">

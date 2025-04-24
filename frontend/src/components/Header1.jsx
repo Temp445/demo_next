@@ -12,11 +12,10 @@ import { useState } from 'react';
 const navigation = [
   
   { name: 'Product Enquiry', href: '#contact' },
-  { name: 'Contact Us', href: '#contact' },
+  // { name: 'Contact Us', href: '#contact' },
   { name: 'About us', href: '#about', },
-  { name: 'Products', href: '/products'},
+  { name: 'Other Products', href: '/products'},
 
-  // { name: 'Dashboard', href: '/admin' },
 ]
 
 function classNames(...classes) {
@@ -27,19 +26,18 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   
   const handleNavigation = () => {
-    // Close the mobile menu when a link is clicked
     setIsOpen(false);
   };
 
   return (
    <div className='w-full z-50 px-1 sm:px-6'>
-     <Disclosure as="nav" className="bg-white w-full" open={isOpen} onChange={setIsOpen}>
+     <Disclosure as="nav" className="bg-white w-full" open={isOpen} onChange={handleNavigation}>
       {({ open, close }) => (
         <>
           <div className="mx-auto sm:px-6 lg:px-8 xl:px-0">
             <div className="flex h-16 items-center justify-between">
               {/* Mobile Menu Button */}
-              <Link href="/">  
+              <Link href="#">  
                 <div className="flex flex-1 md:items-center lg:justify-start gap-1">
                   <Image src={Logo} width={50} height={48} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
                   <span className="mt-3 flex text-sm sm:text-base md:mt-1 font-semibold md:font-normal md:text-lg xl:font-semibold">
@@ -48,7 +46,7 @@ export default function Header() {
                 </div>
               </Link> 
               
-              <Link href="/contact" className='lg:hidden font-bold text-[12px] px-1 rounded bg-black text-white py-1 items-center ml-32 sm:ml-70'>
+              <Link href="#contact" className='lg:hidden font-bold text-[12px] px-1 rounded bg-black text-white py-1 items-center ml-32 sm:ml-70'>
                 Book A Demo
               </Link>
               
