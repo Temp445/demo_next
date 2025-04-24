@@ -64,11 +64,11 @@ const ContactUs = () => {
     <div>
       <Header/>
       <div className=" mt-0 px-2 ">
-      <h2 className=" sm:hidden w-full mx-auto text-center mt-10 mb-5 font-semibold underline text-xl">Contact Us</h2>
-        <div className="flex flex-col md:flex-row p-10 rounded-lg border md:border-0 max-w-6xl mx-auto sm:mt-20 mb-20 justify-center">
+      <h2 className=" sm:hidden w-full mx-auto text-center mt-10 mb-5 font-semibold  text-[24px]">Contact Us</h2>
+        <div className="flex flex-col md:flex-row p-4 py-10 md:py-0 rounded-lg border md:border-0 max-w-6xl mx-auto sm:mt-20 mb-20 justify-center">
           {/* Left */}
           <div className="md:w-2/3">
-            <h2 className="text-lg md:text-3xl font-semibold text-gray-800 mb-6">
+            <h2 className="text-xl md:text-3xl font-semibold text-gray-800 mb-6">
             Connect with us and Book a Demo today!
             </h2>
             <form ref={form} onSubmit={handleSubmit} className="space-y-4">
@@ -258,8 +258,8 @@ const ContactUs = () => {
           <div>
             <p className="text-sm font-medium text-gray-500">Call Us</p>
             <p className="font-semibold text-[14px] text-black">Support - 44 24795144 <br/>
-Sales - 44 24795145 <br/>
-Mobile - 97109 46806</p>
+              Sales - 44 24795145 <br/>
+              Mobile - 97109 46806</p>
           </div>
         </div>
 

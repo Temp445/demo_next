@@ -62,8 +62,8 @@ const ContactUs = () => {
   return (
     <div>
       <div className=" mt-0 px-2 " id="contact" >
-      <h2 className=" w-full mx-auto text-center mt-0 mb-5 font-semibold  text-xl  md:mb-0 md:text-3xl">Contact <span className="text-blue-500">Us</span></h2>
-        <div className="flex flex-col md:flex-row p-10 rounded-lg border md:border-gray-300 max-w-8xl mx-auto sm:mt-10 mb-20 justify-center">
+      <h1 className=" w-full mx-auto text-center mt-0 mb-5 font-semibold  text-xl  md:mb-0 md:text-3xl">Contact <span className="text-blue-500">Us</span></h1>
+        <div className="flex flex-col md:flex-row p-4  rounded-lg border md:border-gray-300 max-w-8xl mx-auto sm:mt-10 mb-20 justify-center">
           {/* Left */}
           <div className="md:w-2/3">
             <h2 className="text-lg md:text-3xl font-semibold text-gray-800 mb-6">
