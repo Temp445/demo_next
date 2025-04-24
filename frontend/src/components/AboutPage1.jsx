@@ -141,7 +141,7 @@ const AboutPage1 = () => {
           <motion.div 
             key={index} 
             variants={itemVariants} 
-            className="w-80"
+            className="w-96"
           >
             <div className="border border-gray-300 rounded-2xl overflow-hidden">
               <Image src={item.img} alt={item.title} className="w-full h-48 object-cover" />

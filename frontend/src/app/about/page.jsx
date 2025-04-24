@@ -149,7 +149,7 @@ const AboutPage = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="flex flex-wrap justify-evenly w-full md:px-10 xl:mt-10 gap-10 py-5 md:py-20"
+        className="flex flex-wrap justify-evenly w-full px-5 md:px-10 xl:mt-10 gap-10 py-5 md:py-20"
       >
         {[
           { img: Vision, 
@@ -165,7 +165,7 @@ const AboutPage = () => {
           <motion.div 
             key={index} 
             variants={itemVariants} 
-            className="w-80"
+            className="w-96"
           >
             <div className="border border-gray-300 rounded-2xl overflow-hidden">
               <Image src={item.img} alt={item.title} className="w-full h-48 object-cover" />

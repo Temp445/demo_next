@@ -245,7 +245,7 @@ const HomePage = () => {
               whileTap="tap"
               className="flex justify-start"
             >
-              <Link href="/about" className="mt-4 sm:mt-6 gap-2 text-[#F7666F] font-semibold text-sm sm:text-sm md:text-base flex items-center">
+              <Link href="/about" className="mt-4 sm:mt-6 gap-2 text-[#F7666F] font-semibold text-[12px] sm:text-sm md:text-base flex items-center">
                 Read more{" "}
                 <span>
                   <FaArrowAltCircleRight className="mt-0.5" />
@@ -282,20 +282,20 @@ const HomePage = () => {
           </motion.h1>
           
           {/* CMS Feature */}
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between mb-10 sm:mb-16 lg:mb-0 xl:ml-10">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between mb-10 sm:mb-16 lg:mb-0 xl:ml-10 border border-gray-300 rounded-sm shadow-sm md:shadow-none md:border-0">
             <motion.div 
               variants={staggerContainer}
               className="w-full md:w-1/2 bg-white rounded-xl p-4 sm:p-6" >
               <motion.h2 
                 variants={fadeIn}
                 custom={0}
-                className=" hidden sm:block font-bold text-base sm:text-lg lg:text-xl xl:text-2xl text-center md:text-left mb-3" >
+                className="  sm:block font-bold text-base sm:text-lg lg:text-xl xl:text-2xl text-left mb-3" >
                 ACE CMS
               </motion.h2>
               
               <motion.div 
                 variants={scaleUp}
-                className="w-full px-10 sm:px-0  mx-auto md:hidden mb-4"
+                className=" hidden w-full px-10 sm:px-0  mx-auto  mb-4"
               >
                 <Image
                   src={CMS}
@@ -354,12 +354,12 @@ const HomePage = () => {
           ref={pmsRef}
           initial="hidden"
           animate={pmsControls}
-          className="container mx-auto mb-6 sm:mb-0 xl:-ml-5"
+          className="container mx-auto mb-6 sm:mb-0 xl:-ml-5  border border-gray-300 rounded-sm shadow-sm md:shadow-none md:border-0"
         >
           <div className="flex flex-col md:flex-row items-center bg-white rounded-xl">
             <motion.div 
               variants={slideIn("left")}
-              className="w-full md:w-1/2 flex justify-center sm:p-4"
+              className=" hidden md:flex w-full md:w-1/2  justify-center sm:p-4"
             >
               <Image
                 src={PMS}
@@ -375,7 +375,7 @@ const HomePage = () => {
               <motion.h2 
                 variants={fadeIn}
                 custom={0}
-                className="hidden sm:block font-bold text-base sm:text-lg lg:text-xl xl:text-2xl text-center md:text-left mb-3"
+                className=" font-bold text-base sm:text-lg lg:text-xl xl:text-2xl text-left mb-3 "
               >
                 ACE PMS
               </motion.h2>
@@ -406,7 +406,7 @@ const HomePage = () => {
                 whileTap="tap"
                 className="flex justify-start"
               >
-                <Link href="/products" className="mt-4 flex items-center gap-2 text-sm sm:text-sm text-[#F7666F] font-semibold">
+                <Link href="/products" className="mt-4 flex items-center gap-2 text-[12px] sm:text-sm text-[#F7666F] font-semibold">
                   Read more <FaArrowAltCircleRight className="mt-0.5" />
                 </Link>
               </motion.div>
@@ -424,7 +424,7 @@ const HomePage = () => {
           className="flex justify-center"
         >
           <Link href="/products" className="gap-2 text-base sm:text-base underline text-[#F7666F] flex items-center font-semibold mt-0 sm:mt-0">
-          View all our products
+          View all products
           </Link>
         </motion.div>
       </motion.div>

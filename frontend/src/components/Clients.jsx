@@ -46,10 +46,10 @@ const ClientCarousel = () => {
   ];
 
   return (
-    <div className="px-5 lg:px-20 mt-10">
+    <div className="px-5 lg:px-20 mt-5 md:mt-10">
       <h1 className="text-center text-[22px] py-5 font-semibold">Our Clients</h1>
 
-      <div className="py-4">
+      <div className="py-2 md:py-4">
         <Marquee
           gradient={false}
           speed={50}
