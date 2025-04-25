@@ -42,7 +42,7 @@ export default function Header() {
                 </div>
               </Link> 
               
-              <Link href="/contact" className='lg:hidden font-bold text-[12px] px-1 rounded bg-black text-white py-1 items-center ml-24 sm:ml-70'>
+              <Link href="/Demo" className='lg:hidden font-bold text-[12px] px-1 rounded bg-black text-white py-1 items-center ml-24 sm:ml-70'>
                 Book A Demo
               </Link>
               

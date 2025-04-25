@@ -107,7 +107,7 @@ const AboutPage = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="flex-wrap mt-10 text-justify sm:text-center justify-center px-5 lg:px-20 2xl:px-40 h-auto py-5 xl:mt-20"
+        className="flex-wrap md:mt-10 text-justify sm:text-center justify-center px-5 lg:px-20 2xl:px-40 h-auto py-5 xl:mt-20"
       >
         <motion.p variants={itemVariants} className="py-2 text-[12px] sm:text-[16px] lg:text-lg">
           The ASSPL Management Team has hands on experience in designing and
@@ -236,8 +236,8 @@ const AboutPage = () => {
         </motion.div>
       </motion.div>
 
-      <div className="bg-gray-100 mt-20 h-auto pb-16 px-10 sm:px-0 4xl:rounded-2xl">
-  <h1 className="flex w-full justify-center py-5 font-bold text-[20px] lg:text-[24px] text-gray-800 mt-10">
+      <div className="md:bg-gray-100 mt-12 md:mt-20 h-auto pb-16 px-10 sm:px-0 4xl:rounded-2xl">
+  <h1 className="flex w-full justify-center py-5 font-bold text-[20px] lg:text-[24px] text-gray-800 md:mt-10">
   Our Leadership Team
   </h1>
 
@@ -282,7 +282,7 @@ const AboutPage = () => {
       ].map((leader, index) => (
         <div
           key={index}
-          className="w-full bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:scale-105 md:my-10"
+          className="w-full bg-white rounded-xl overflow-hidden border border-gray-200 md:border-0 shadow-lg hover:shadow-2xl transition duration-300 hover:scale-105 md:my-10"
         >
           <div className="flex flex-col items-center p-5">
             <div className="w-32 h-32 rounded-full overflow-hidden  shadow-lg shadow-gray-300 ">

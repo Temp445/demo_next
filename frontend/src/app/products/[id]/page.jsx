@@ -27,7 +27,6 @@ const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [hoveredBenefitIndex, setHoveredBenefitIndex] = useState(null);
-  const [showOtherProducts, setshowOtherProducts] = useState(false);
   const [showNavbar, setshowNavbar] = useState(true);
   const [showNavbar1, setshowNavbar1] = useState(true);
 
@@ -43,12 +42,10 @@ const ProductDetails = () => {
       const fromProductsPage = searchParams.get('fromProducts') === 'true';
       
       if (!fromProductsPage) {
-        setshowOtherProducts(true);
         setshowNavbar(true);
         setshowNavbar1(false);
         setShowAbout(true);
       } else {
-        setshowOtherProducts(false); 
         setshowNavbar(false);
         setshowNavbar1(true);
         setShowAbout(false);
@@ -229,7 +226,7 @@ const ProductDetails = () => {
             {showNavbar1 && (
           <button
               className="bg-blue-500 text-[13px] md:text-sm md:ml-1 px-4 py-2 rounded-lg mt-5 text-white hover:bg-blue-700 transition hover:scale-105"
-              onClick={() => router.push("/contact")}
+              onClick={() => router.push("/Demo")}
             >
               Book A Demo
             </button>

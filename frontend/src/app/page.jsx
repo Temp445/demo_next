@@ -375,7 +375,7 @@ const HomePage = () => {
               <motion.h2 
                 variants={fadeIn}
                 custom={0}
-                className=" font-bold text-base sm:text-lg lg:text-xl xl:text-2xl text-left mb-3 "
+                className=" font-bold text-base sm:text-lg lg:text-xl xl:text-2xl text-left mb-3 relative flex "
               >
                 ACE PMS
               </motion.h2>
@@ -441,7 +441,7 @@ const HomePage = () => {
         </p>
         
         <Link 
-          href="/contact" 
+          href="/Demo" 
           className="inline-flex md:mt-8 text-sm md:text-lg items-center justify-center px-6 py-3 border border-red-500  font-medium rounded-full hover:bg-red-700 hover:text-white transition-colors duration-200 shadow-lg "
         >
           Book a Demo Now

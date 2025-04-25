@@ -65,7 +65,7 @@ const Footer = () => {
                 <Link href="/about" className="text-xs md:text-sm xl:text-base hover:text-gray-600 transition-colors">About</Link>
                 <Link href="/products" className="text-xs md:text-sm xl:text-base hover:text-gray-600 transition-colors">Products</Link>
                 <Link href="/ProductEnquire" className="text-xs md:text-sm xl:text-base hover:text-gray-600 transition-colors">Product Enquiry</Link>
-                <Link href="/contact" className="text-xs md:text-sm xl:text-base hover:text-gray-600 transition-colors">Book A Demo</Link>
+                <Link href="/Demo" className="text-xs md:text-sm xl:text-base hover:text-gray-600 transition-colors">Book A Demo</Link>
               </div>
             </div>
           </div>
