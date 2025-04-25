@@ -13,7 +13,7 @@ const url = process.env.NEXT_PUBLIC_CALENDLY_URL;
   <div>
     <Header/>
   </div>
-  <h1 className="mt-10 text-xl md:text-2xl font-bold md:font-extrabold  text-center">Book A Free Demo Now!</h1>
+  <h1 className="mt-10 text-xl md:text-2xl font-bold md:font-extrabold  text-center text-shadow-lg/20">Book A Free Demo Now!</h1>
      <div className="App">
       <InlineWidget url= {url} />
     </div>
