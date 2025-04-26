@@ -11,6 +11,7 @@ import AboutPage1 from "../../../components/AboutPage1";
 import Header1 from "../../../components/Header1";
 import Header from "../../../components/Header";
 import ContactUs from "@/components/Contact";
+import BookCard from "@/components/BookCard";
 
 
 
@@ -640,7 +641,8 @@ const ProductDetails = () => {
         </motion.div>
 
       ): null}
-
+      
+<BookCard/>
 
       {showAbout && (
          <div className="mt-32">

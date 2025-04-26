@@ -40,7 +40,7 @@ export default function Header() {
                 <div className="flex flex-1 md:items-center lg:justify-start gap-1">
                   <Image src={Logo} width={50} height={48} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
                   <span className="mt-3 flex text-[16px] sm:text-base md:mt-1 font-semibold md:font-normal md:text-lg xl:font-semibold">
-                    ACE <span className='lg:hidden'>Soft.in</span> <span className='hidden ml-2 lg:block'>Software Solutions Pvt. Ltd</span>
+                    ACE <span className='lg:hidden ml-1'>Soft.in</span> <span className='hidden ml-2 lg:block'>Software Solutions Pvt. Ltd</span>
                   </span>
                 </div>
               </Link> 

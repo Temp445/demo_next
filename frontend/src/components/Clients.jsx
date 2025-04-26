@@ -46,7 +46,7 @@ const ClientCarousel = () => {
   ];
 
   return (
-    <div className="px-5 lg:px-20 mt-5 md:mt-10">
+    <div className="px-5 lg:px-20 mt-5 md:mt-10 z-0">
       <h1 className="text-center text-[22px] py-5 font-semibold">Our Clients</h1>
 
       <div className="py-2 md:py-4">
@@ -57,11 +57,11 @@ const ClientCarousel = () => {
           loop={0}
         >
           {logos.concat(logos).map((logo, index) => (
-            <div key={index} className="flex items-center">
+            <div key={index} className="flex items-center z-0">
               <Image
                 src={logo}
                 alt={`Client Logo ${index + 1}`}
-                className="w-32 h-20 mx-5 object-contain border border-gray-100 rounded-lg shadow-md p-2 bg-white mt-5 mb-5 transition-transform duration-300 ease-in-out hover:scale-110"
+                className="w-32 h-20 mx-5 object-contain border border-gray-100 rounded-lg shadow-md p-2 bg-white mt-5 mb-5 transition-transform duration-300 ease-in-out hover:scale-110 z-0"
               />
             </div>
           ))}

@@ -8,8 +8,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-
+import { LuMessageSquareMore } from "react-icons/lu";
 const navigation = [
+  { name: 'Home', href: '/'},
   { name: 'Products', href: '/products'},
   { name: 'Product Enquiry', href: '/ProductEnquire' },
   { name: 'Contact Us', href: '/contact' },
@@ -26,23 +27,23 @@ export default function Header() {
   
 
   return (
-   <div className='w-full z-50 px-1 sm:px-6'>
-     <Disclosure as="nav" className="bg-white w-full" open={isOpen} onChange={setIsOpen}>
+   <div className='w-full z-[200] px-1 sm:px-6 '>
+     <Disclosure as="nav" className="bg-none md:bg-white w-full fixed md:relative z-[200] " open={isOpen} onChange={setIsOpen}>
       {({ open, close }) => (
         <>
           <div className="mx-auto sm:px-6 lg:px-8 xl:px-0">
             <div className="flex h-16 items-center justify-between">
               {/* Mobile Menu Button */}
               <Link href="/">  
-                <div className="flex flex-1 md:items-center lg:justify-start gap-1">
+                <div className="hidden md:flex flex-1 md:items-center lg:justify-start gap-1">
                   <Image src={Logo} width={50} height={48} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
                   <span className="mt-3 flex text-[16px] sm:text-base md:mt-1 font-semibold md:font-normal md:text-lg xl:font-semibold">
-                    ACE <span className='lg:hidden'>Soft.in</span> <span className='hidden ml-2 lg:block'>Software Solutions Pvt. Ltd</span>
+                    ACE <span className=' ml-2'>Software Solutions Pvt. Ltd</span>
                   </span>
                 </div>
               </Link> 
               
-              <Link href="/Demo" className='lg:hidden font-bold text-[12px] px-1 rounded bg-black text-white py-1 items-center ml-24 sm:ml-70'>
+              {/* <Link href="/Demo" className='lg:hidden font-bold text-[12px] px-1 rounded bg-black text-white py-1 items-center ml-24 sm:ml-70'>
                 Book A Demo
               </Link>
               
@@ -57,7 +58,7 @@ export default function Header() {
                     <HiMenuAlt3 className="block justify-end size-6 font-black" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
-              </div>
+              </div> */}
 
 
               {/* Desktop Navigation */}
@@ -80,8 +81,36 @@ export default function Header() {
             </div>
           </div>
 
+
+          <div className=" sm:hidden -ml-1 mx-auto sm:px-6 lg:px-8 xl:px-0 fixed bottom-0 bg-[#0B3C49] w-full z-[200]  border-l-2 border-white overflow-hidden">
+            <div className="flex h-14 items-center justify-between overflow-hidden z-[200]">
+              {/* Mobile Menu Button */}
+              
+              <div className="flex items-center lg:hidden md:justify-end bg-[#ee6910] h-16 w-14 z-[200]">
+                <Disclosure.Button 
+                  className="relative inline-flex items-center justify-center ml-1  p-2 gap-3  text-black hover:bg-gray-700 hover:text-white"
+                  aria-label="Main menu"
+                >
+                  {open ? (
+                    <XMarkIcon className="block size-6" aria-hidden="true" />
+                  ) : (
+                    <HiMenuAlt3 className="block justify-end size-6 font-black" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+
+              <Link href="/" className='lg:hidden font-bold text-[16px] px-5  text-white py-2 items-center ml-5 sm:ml-70'>
+                ACE Software Solutions
+              </Link>
+
+              <Link href="/Demo" className='lg:hidden font-bold w-16 justify-center text-center border-l-2 border-white text-white h-16 items-center overflow-hidden'>
+              <LuMessageSquareMore className='text-3xl mt-4 ml-4' />
+              </Link>
+            </div>
+          </div>
+
           {/* Mobile Menu */}
-          <Disclosure.Panel className="lg:hidden absolute bg-white w-full z-50">
+          <Disclosure.Panel className="lg:hidden fixed bg-white w-3/4 z-[100] bottom-16 rounded-lg shadow-lg">
             <div className="space-y-1 px-4 pt-2 pb-3 flex-col flex items-start">
               {navigation.map((item) => (
                 <div key={item.name} className="w-full">

@@ -249,21 +249,21 @@ const AboutPage = () => {
           img: Pic1,
           position: "Chairman of ACE Software Solutions Pvt. Ltd",
           description:
-            "With over 30 years of experience in the automobile industry, specializing in Industrial Engineering, Production Planning, Shop Floor Systems, and Materials Management, he provides strategic inputs for the organizational growth of ASSPL.",
+            "With over 35 years of experience in the automobile industry, specializing in Industrial Engineering, Production Planning, Shop Floor Systems, and Materials Management, he provides strategic inputs for the organizational growth of ASSPL.",
         },
         {
           name: "S Rajasekaran",
           img: Pic2,
           position: "Managing Director of ACE Software Solutions Pvt. Ltd",
           description:
-            "With over 25 years' experience in Materials Management & System Design and Finance, he is also the Founder & CEO of ASSPL, who leads the day-to-day functions on a strategic level with his domain expertise.",
+            "With over 30 years' experience in Materials Management & System Design and Finance, he is also the Founder & CEO of ASSPL, who leads the day-to-day functions on a strategic level with his domain expertise.",
         },
         {
           name: "R Abilash  Chakaravarth",
           img: Pic3,
           position: "Board of Directors of ACE Software Solutions Pvt. Ltd",
           description:
-            "With over 25 years' experience in Materials Management & System Design and Finance, he is also the Founder & CEO of ASSPL, who leads the day-to-day functions on a strategic level with his domain expertise.",
+            "With more than 8 years of experience in product design and product development , he holds several patterns and research papers in the field of engineering, he is CEO of ASSPL providing key insights to achieve and propel the organisation.",
         },
         {
           name: "R Abishek Karthik",
