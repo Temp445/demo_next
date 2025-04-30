@@ -137,7 +137,6 @@ const ProductsPage = () => {
             <p className="text-center text-gray-500 my-6">Loading products...</p>
           ) : filteredProducts.length === 0 ? (
             <p className="text-center text-gray-500 my-6">
-              No products available in this category.
             </p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-2 lg:gap-6 px-1 py-3 xl:px-5">

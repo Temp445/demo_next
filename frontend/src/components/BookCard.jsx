@@ -6,8 +6,8 @@ import { SlCalender } from "react-icons/sl";
 
 const BookCard = () => {
   return (
-    <div className='mt-14'>
-           <div className="w-full  lg:w-full mx-auto px-6 md:px-32 py-8 md:py-10   bg-[url(../assets/Images/blueBg.png)] md:rounded-xl overflow-hidden relative">
+    <div className=' mt-10 md:mt-14'>
+           <div className="w-full  lg:w-full mx-auto  md:px-32 py-8 md:py-10   bg-[url(../assets/Images/blueBg.png)] md:rounded-xl overflow-hidden relative">
 
               <div className="h-[320px] md:h-96 flex flex-col items-center justify-centerborder bg-white border-gray-300 rounded-xl  p-8 shadow-lg relative">
                 <div className="w-20 h-1 rounded-2xl justify-center bg-blue-500"></div>

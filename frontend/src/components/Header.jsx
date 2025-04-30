@@ -85,7 +85,7 @@ export default function Header() {
               </div>
 
               <Link href="/" className='lg:hidden font-bold text-[16px] px-5  text-white py-2 items-center text-center ml-2 lg:ml-70 flex gap-1'>
-                  <Image src={Logo} width={35} height={35} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
+                  <Image src={Logo} width={32} height={32} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
                <span className='mt-0.5'> ACE Software Solutions</span> <span className='hidden md:block'>Pvt. Ltd</span>
               </Link>
 

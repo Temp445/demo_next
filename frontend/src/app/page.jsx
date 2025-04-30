@@ -437,11 +437,11 @@ const HomePage = () => {
       <div className="w-full max-w-6xl lg:max-w-7xl mx-auto px-6 md:px-32 py-8 md:py-10  bg-red-50 md:rounded-xl ">
       <div className="h-[320px] md:h-96 flex flex-col items-center justify-centerborder bg-white border-gray-300 rounded-xl  p-8 shadow-lg relative">
         <div className="w-20 h-1 rounded-2xl justify-center bg-red-400"></div>
-        <h1 className=" text-xl md:text-3xl font-extrabold text-center text-gray-800 mb-6 mt-8 md:mt-14  ">
+        <h1 className=" text-xl md:text-3xl font-extrabold text-center text-gray-800 mb-6 mt-8 md:mt-14 overflow-hidden ">
           Ready to Transform Your Business?
         </h1>
         
-        <p className="text-[12px] md:text-lg text-center text-gray-600 max-w-3xl mb-10  ">
+        <p className="text-[12px] md:text-lg text-center text-gray-600 max-w-3xl mb-10 overflow-hidden ">
           Schedule a personalized demo to see how our solutions can address your specific challenges and drive growth for your business.
         </p>
         
