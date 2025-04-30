@@ -3,7 +3,9 @@
 import { Disclosure } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { HiMenuAlt3 } from "react-icons/hi";
-import Logo from '../assets/Images/AceLogo.png'
+import { IoReorderThreeOutline } from "react-icons/io5";
+import Logo from '../assets/Images/logo.svg'
+import LogoLg from '../assets/Images/AceLogo.png'
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -27,38 +29,21 @@ export default function Header() {
   
 
   return (
-   <div className='w-full z-[200] px-1 sm:px-6 '>
-     <Disclosure as="nav" className="bg-none md:bg-white w-full fixed md:relative z-[200] " open={isOpen} onChange={setIsOpen}>
+   <div className='w-full z-[200]  lg:px-6 '>
+     <Disclosure as="nav" className="bg-none lg:bg-white w-full fixed lg:relative z-[200] " open={isOpen} onChange={setIsOpen}>
       {({ open, close }) => (
         <>
           <div className="mx-auto sm:px-6 lg:px-8 xl:px-0">
             <div className="flex h-16 items-center justify-between">
               {/* Mobile Menu Button */}
               <Link href="/">  
-                <div className="hidden md:flex flex-1 md:items-center lg:justify-start gap-1">
-                  <Image src={Logo} width={50} height={48} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
+                <div className="hidden lg:flex flex-1 md:items-center lg:justify-start gap-1">
+                  <Image src={LogoLg} width={50} height={48} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
                   <span className="mt-3 flex text-[16px] sm:text-base md:mt-1 font-semibold md:font-normal md:text-lg xl:font-semibold">
                     ACE <span className=' ml-2'>Software Solutions Pvt. Ltd</span>
                   </span>
                 </div>
               </Link> 
-              
-              {/* <Link href="/Demo" className='lg:hidden font-bold text-[12px] px-1 rounded bg-black text-white py-1 items-center ml-24 sm:ml-70'>
-                Book A Demo
-              </Link>
-              
-              <div className="flex items-center lg:hidden md:justify-end">
-                <Disclosure.Button 
-                  className="relative inline-flex items-center justify-center rounded-md p-2 gap-3 text-gray-600 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white"
-                  aria-label="Main menu"
-                >
-                  {open ? (
-                    <XMarkIcon className="block size-6" aria-hidden="true" />
-                  ) : (
-                    <HiMenuAlt3 className="block justify-end size-6 font-black" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div> */}
 
 
               {/* Desktop Navigation */}
@@ -82,25 +67,26 @@ export default function Header() {
           </div>
 
 
-          <div className=" sm:hidden -ml-1 mx-auto sm:px-6 lg:px-8 xl:px-0 fixed bottom-0 bg-[#0B3C49] w-full z-[200]  border-l-2 border-white overflow-hidden">
+          <div className=" lg:hidden -ml-[0.5px]  mx-auto  lg:px-8 xl:px-0 fixed bottom-0 bg-[#128daf] w-full z-[200]  border-l-2 border-white overflow-hidden">
             <div className="flex h-14 items-center justify-between overflow-hidden z-[200]">
               {/* Mobile Menu Button */}
               
-              <div className="flex items-center lg:hidden md:justify-end bg-[#ee6910] h-16 w-14 z-[200]">
+              <div className="flex items-center lg:hidden md:justify-end bg-[#fa650f] h-16 w-14 z-[200]">
                 <Disclosure.Button 
-                  className="relative inline-flex items-center justify-center ml-1  p-2 gap-3  text-black hover:bg-gray-700 hover:text-white"
+                  className="relative inline-flex items-center justify-center ml-2 md:ml-0  md:mr-2 gap-3  text-white  hover:text-white"
                   aria-label="Main menu"
                 >
                   {open ? (
                     <XMarkIcon className="block size-6" aria-hidden="true" />
                   ) : (
-                    <HiMenuAlt3 className="block justify-end size-6 font-black" aria-hidden="true" />
+                    <IoReorderThreeOutline className="block justify-end size-7.5 font-black" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>
 
-              <Link href="/" className='lg:hidden font-bold text-[16px] px-5  text-white py-2 items-center ml-5 sm:ml-70'>
-                ACE Software Solutions
+              <Link href="/" className='lg:hidden font-bold text-[16px] px-5  text-white py-2 items-center text-center ml-2 lg:ml-70 flex gap-1'>
+                  <Image src={Logo} width={35} height={35} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
+               <span className='mt-0.5'> ACE Software Solutions</span> <span className='hidden md:block'>Pvt. Ltd</span>
               </Link>
 
               <Link href="/Demo" className='lg:hidden font-bold w-16 justify-center text-center border-l-2 border-white text-white h-16 items-center overflow-hidden'>

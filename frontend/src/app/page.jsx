@@ -12,6 +12,9 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import Header from "@/components/Header";
+import { SlCalender } from "react-icons/sl";
+
+
 const HomePage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -119,7 +122,7 @@ const HomePage = () => {
             <motion.h1 
               variants={fadeIn}
               custom={0}
-              className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#F7666F] text-left lg:text-left mb-4 sm:mb-6 lg:h-28 overflow-hidden"
+              className="text-3xl sm:text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-bold text-[#F7666F] text-left md:text-center lg:text-left mb-4 sm:mb-6 lg:h-28 overflow-hidden"
             >
               Great Product is built <br className="block" />
               <span className="text-[#403D3D]">by great teams</span>
@@ -129,11 +132,12 @@ const HomePage = () => {
               variants={scaleUp}
               className="h-auto justify-center mx-auto w-4/5 sm:w-3/5 max-w-xs my-4 lg:hidden"
               preload="auto"
+              poster="/videos/Landing.png"
               autoPlay
               loop
               muted
               playsInline >
-              <source src="/videos/LandingVideo.mp4" type="video/mp4" />
+              <source src="/videos/LandingVideo.webm" type="video/webm" />
             </motion.video>
 
             <motion.p 
@@ -172,12 +176,13 @@ const HomePage = () => {
           <video
             className="hidden lg:block w-4/5 md:w-full lg:w-11/12 xl:w-10/12 h-auto"
             preload="auto"
+            poster="/videos/Landing.png"
             autoPlay
             loop
             muted
             playsInline
           >
-            <source src="/videos/LandingVideo.mp4" type="video/mp4" />
+            <source src="/videos/LandingVideo.webm" type="video/webm" />
           </video>
         </motion.div>
       </motion.section>
@@ -330,7 +335,7 @@ const HomePage = () => {
                 whileTap="tap"
                 className="flex justify-start"
               >
-                <Link href="/products" className="mt-4 flex items-center gap-2 text-[12px] sm:text-sm text-[#F7666F] font-semibold">
+                <Link href="/products/67dd3c6c05e8fd1803fbf0ec?fromProducts=true" className="mt-4 flex items-center gap-2 text-[12px] sm:text-sm text-[#F7666F] font-semibold">
                   Read more <FaArrowAltCircleRight className="mt-0.5" />
                 </Link>
               </motion.div>
@@ -406,7 +411,7 @@ const HomePage = () => {
                 whileTap="tap"
                 className="flex justify-start"
               >
-                <Link href="/products" className="mt-4 flex items-center gap-2 text-[12px] sm:text-sm text-[#F7666F] font-semibold">
+                <Link href="/products/67dd428505e8fd1803fbf1d5?fromProducts=true" className="mt-4 flex items-center gap-2 text-[12px] sm:text-sm text-[#F7666F] font-semibold">
                   Read more <FaArrowAltCircleRight className="mt-0.5" />
                 </Link>
               </motion.div>
@@ -441,11 +446,11 @@ const HomePage = () => {
         </p>
         
         <Link 
-          href="/Demo" 
-          className="inline-flex md:mt-8 text-sm md:text-lg items-center justify-center px-6 py-3 border border-red-500  font-medium rounded-full hover:bg-red-700 hover:text-white transition-colors duration-200 shadow-lg "
-        >
-          Book a Demo Now
-        </Link>
+                  href="/Demo" 
+                  className=" overflow-hidden inline-flex md:mt-8 gap-3 text-sm md:text-lg items-center justify-center px-6 py-3 border border-red-500  font-medium rounded-full hover:bg-red-600 hover:text-white transition-colors duration-200 shadow-lg "
+                >
+                  <span className='mb-1'> <SlCalender className='text-xl font-bold'/> </span>  Book a Demo Now
+                </Link>
       </div>
     </div>
      

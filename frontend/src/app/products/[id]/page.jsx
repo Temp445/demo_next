@@ -116,7 +116,7 @@ const ProductDetails = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="text-center text-red-500 my-10 p-6 bg-red-50 rounded-lg shadow"
+        className="text-center text-red-500 my-10 p-6"
       >
         {error}
       </motion.div>
@@ -223,7 +223,6 @@ const ProductDetails = () => {
 ) : null }
 
            
-
             {showNavbar1 && (
           <button
               className="bg-blue-500 text-[13px] md:text-sm md:ml-1 px-4 py-2 rounded-lg mt-5 text-white hover:bg-blue-700 transition hover:scale-105"

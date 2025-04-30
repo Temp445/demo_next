@@ -3,7 +3,6 @@ const router = express.Router();
 const {
   getAllProducts,
   getProductById,
-  getProductByName,
   createProduct,
   updateProduct,
   deleteProduct,
@@ -33,7 +32,7 @@ router.route("/product").post(upload.fields([{ name: "imageUrl" }, { name: "gall
 //get product by ID
 router.route("/product/:id").get(getProductById);
 
-router.route("/product/:name").get(getProductByName); 
+
 
 
 //update
