@@ -171,8 +171,7 @@ const HomePage = () => {
           variants={slideIn("right")}
           initial="hidden"
           animate={heroControls}
-          className="w-full lg:w-1/2 flex justify-center items-center mb-6 lg:mb-0"
-        >
+          className="w-full lg:w-1/2 flex justify-center items-center mb-6 lg:mb-0" >
           <video
             className="hidden lg:block w-4/5 md:w-full lg:w-11/12 xl:w-10/12 h-auto"
             preload="auto"
@@ -180,9 +179,8 @@ const HomePage = () => {
             autoPlay
             loop
             muted
-            playsInline
-          >
-            <source src="/videos/LandingVideo.webm" type="video/webm" />
+            playsInline >
+            <source src="/videos/LandingVideo.mp4" type="video/mp4" />
           </video>
         </motion.div>
       </motion.section>
@@ -369,7 +367,7 @@ const HomePage = () => {
               <Image
                 src={PMS}
                 alt="ACE PMS Illustration"
-                className="w-4/5 md:w-10/12 xl:w-[800px] rounded-md"
+                className="w-4/5 md:w-10/12 lg:w-[800px] xl:w-[800px] rounded-md"
               />
             </motion.div>
 

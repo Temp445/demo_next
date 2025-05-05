@@ -1,124 +1,155 @@
-'use client'
+'use client';
 
-import { Disclosure } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import { HiMenuAlt3 } from "react-icons/hi";
-import { IoReorderThreeOutline } from "react-icons/io5";
-import Logo from '../assets/Images/logo.svg'
-import LogoLg from '../assets/Images/AceLogo.png'
+import { Disclosure } from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
+import { IoReorderThreeOutline } from 'react-icons/io5';
+import Logo from '../assets/Images/logo.svg';
+import LogoLg from '../assets/Images/AceLogo.png';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import { LuMessageSquareMore } from "react-icons/lu";
-const navigation = [
-  { name: 'Home', href: '/'},
-  { name: 'Products', href: '/products'},
-  { name: 'Product Enquiry', href: '/ProductEnquire' },
-  { name: 'Contact Us', href: '/contact' },
-  { name: 'About us', href: '/about', },
-  // { name: 'Dashboard', href: '/admin' },
-]
+import { useState, useEffect } from 'react';
+import { LuMessageSquareMore } from 'react-icons/lu';
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
+
+  // Check for token on load
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    setIsAuthenticated(!!token);
+  }, []);
+
+  // Handle logout
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsAuthenticated(false);
+    router.push('/login');
+  };
+
+  const navigation = [
+    { name: 'Products', href: '/products' },
+    { name: 'Product Enquiry', href: '/ProductEnquire' },
+    { name: 'Contact Us', href: '/contact' },
+    { name: 'About us', href: '/about' },
+    isAuthenticated
+      ? { name: 'Logout', href: '#', onClick: handleLogout }
+      : { name: 'Login', href: '/login' },
+  ];
 
   return (
-   <div className='w-full z-[200]  lg:px-6 '>
-     <Disclosure as="nav" className="bg-none lg:bg-white w-full fixed lg:relative z-[200] " open={isOpen} onChange={setIsOpen}>
-      {({ open, close }) => (
-        <>
-          <div className="mx-auto sm:px-6 lg:px-8 xl:px-0">
-            <div className="flex h-16 items-center justify-between">
-              {/* Mobile Menu Button */}
-              <Link href="/">  
-                <div className="hidden lg:flex flex-1 md:items-center lg:justify-start gap-1">
-                  <Image src={LogoLg} width={50} height={48} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
-                  <span className="mt-3 flex text-[16px] sm:text-base md:mt-1 font-semibold md:font-normal md:text-lg xl:font-semibold">
-                    ACE <span className=' ml-2'>Software Solutions Pvt. Ltd</span>
-                  </span>
+    <div className='w-full z-[200] lg:px-6'>
+      <Disclosure
+        as="nav"
+        className="bg-none lg:bg-white w-full fixed lg:relative z-[200]"
+        open={isOpen}
+        onChange={setIsOpen}
+      >
+        {({ open, close }) => (
+          <>
+            <div className="mx-auto sm:px-6 lg:px-8 xl:px-0">
+              <div className="flex h-16 items-center justify-between">
+                {/* Logo - Desktop */}
+                <Link href="/">
+                  <div className="hidden lg:flex flex-1 md:items-center lg:justify-start gap-1">
+                    <Image src={LogoLg} width={50} height={48} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
+                    <span className="mt-3 flex text-[16px] sm:text-base md:mt-1 font-semibold md:font-normal md:text-lg xl:font-semibold">
+                      ACE <span className=' ml-2'>Software Solutions Pvt. Ltd</span>
+                    </span>
+                  </div>
+                </Link>
+
+                {/* Desktop Navigation */}
+                <div className="hidden md:hidden lg:block">
+                  <div className="flex space-x-6">
+                    {navigation.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={(e) => {
+                          if (item.onClick) {
+                            e.preventDefault();
+                            item.onClick();
+                          }
+                        }}
+                        className={classNames(
+                          'hover-effect-1 hover:text-white cursor-pointer',
+                          'rounded-md px-2 py-2 text-12 md:text-base font-semibold'
+                        )}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </Link> 
+              </div>
+            </div>
 
+            {/* Bottom Mobile Bar */}
+            <div className="lg:hidden -ml-[0.5px] mx-auto lg:px-8 xl:px-0 fixed bottom-0 bg-[#128daf] w-full z-[200] border-l-2 border-white overflow-hidden">
+              <div className="flex h-14 items-center justify-between overflow-hidden z-[200]">
+                {/* Mobile Menu Button */}
+                <div className="flex items-center lg:hidden md:justify-end bg-[#fa650f] h-16 w-14 z-[200]">
+                  <Disclosure.Button
+                    className="relative inline-flex items-center justify-center ml-2 md:ml-0 md:mr-2 gap-3 text-white hover:text-white"
+                    aria-label="Main menu"
+                  >
+                    {open ? (
+                      <XMarkIcon className="block size-6" aria-hidden="true" />
+                    ) : (
+                      <IoReorderThreeOutline className="block justify-end size-7.5 font-black" aria-hidden="true" />
+                    )}
+                  </Disclosure.Button>
+                </div>
 
-              {/* Desktop Navigation */}
-              <div className="hidden md:hidden lg:block">
-                <div className="flex space-x-6">
-                  {navigation.map((item) => (
+                {/* Logo - Mobile */}
+                <Link href="/" className='lg:hidden font-bold text-[16px] px-5 text-white py-2 items-center text-center ml-2 flex gap-1'>
+                  <Image src={Logo} width={32} height={32} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
+                  <span className='mt-0.5'> ACE Software Solutions</span> <span className='hidden md:block'>Pvt. Ltd</span>
+                </Link>
+
+                {/* Message icon */}
+                <Link href="/Demo" className='lg:hidden font-bold w-16 justify-center text-center border-l-2 border-white text-white h-16 items-center overflow-hidden'>
+                  <LuMessageSquareMore className='text-3xl mt-4 ml-4' />
+                </Link>
+              </div>
+            </div>
+
+            {/* Mobile Menu Panel */}
+            <Disclosure.Panel className="lg:hidden fixed bg-white w-3/4 z-[100] bottom-16 rounded-lg shadow-lg">
+              <div className="space-y-1 px-4 pt-2 pb-3 flex-col flex items-start">
+                {navigation.map((item) => (
+                  <div key={item.name} className="w-full">
                     <Link
-                      key={item.name}
                       href={item.href}
+                      onClick={(e) => {
+                        if (item.onClick) {
+                          e.preventDefault();
+                          item.onClick();
+                        } else {
+                          close();
+                        }
+                      }}
                       className={classNames(
-                        item.current ? 'bg-gray-900 text-black' : 'hover-effect-1 hover:text-white cursor-pointer',
-                        'rounded-md px-2 py-2 text-12 md:text-base font-semibold'
+                        'text-gray-700 hover:bg-gray-800 hover:text-white',
+                        'block rounded-md px-3 py-2 text-base text-[14px] w-full'
                       )}
                     >
                       {item.name}
                     </Link>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
-            </div>
-          </div>
-
-
-          <div className=" lg:hidden -ml-[0.5px]  mx-auto  lg:px-8 xl:px-0 fixed bottom-0 bg-[#128daf] w-full z-[200]  border-l-2 border-white overflow-hidden">
-            <div className="flex h-14 items-center justify-between overflow-hidden z-[200]">
-              {/* Mobile Menu Button */}
-              
-              <div className="flex items-center lg:hidden md:justify-end bg-[#fa650f] h-16 w-14 z-[200]">
-                <Disclosure.Button 
-                  className="relative inline-flex items-center justify-center ml-2 md:ml-0  md:mr-2 gap-3  text-white  hover:text-white"
-                  aria-label="Main menu"
-                >
-                  {open ? (
-                    <XMarkIcon className="block size-6" aria-hidden="true" />
-                  ) : (
-                    <IoReorderThreeOutline className="block justify-end size-7.5 font-black" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
-
-              <Link href="/" className='lg:hidden font-bold text-[16px] px-5  text-white py-2 items-center text-center ml-2 lg:ml-70 flex gap-1'>
-                  <Image src={Logo} width={32} height={32} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
-               <span className='mt-0.5'> ACE Software Solutions</span> <span className='hidden md:block'>Pvt. Ltd</span>
-              </Link>
-
-              <Link href="/Demo" className='lg:hidden font-bold w-16 justify-center text-center border-l-2 border-white text-white h-16 items-center overflow-hidden'>
-              <LuMessageSquareMore className='text-3xl mt-4 ml-4' />
-              </Link>
-            </div>
-          </div>
-
-          {/* Mobile Menu */}
-          <Disclosure.Panel className="lg:hidden fixed bg-white w-3/4 z-[100] bottom-16 rounded-lg shadow-lg">
-            <div className="space-y-1 px-4 pt-2 pb-3 flex-col flex items-start">
-              {navigation.map((item) => (
-                <div key={item.name} className="w-full">
-                  <Link
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? 'bg-gray-900 text-white'
-                        : 'text-gray-700 hover:bg-gray-800 hover:text-white',
-                      'block rounded-md px-3 py-2 text-base text-[14px] w-full'
-                    )}
-                    onClick={() => close()}
-                  >
-                    <span>{item.name}</span>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </Disclosure.Panel>
-        </>
-      )}
-     </Disclosure>
-   </div>
-  )
+            </Disclosure.Panel>
+          </>
+        )}
+      </Disclosure>
+    </div>
+  );
 }

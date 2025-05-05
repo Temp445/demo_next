@@ -2,7 +2,7 @@
 import "./globals.css";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-
+import { AuthProvider } from '../context/AuthContext';
 
 
 export const metadata = {
@@ -14,12 +14,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-       <link rel="icon" href="/AceLogo.png" />
-      <body>
+    <link rel="icon" href="/AceLogo.png" />
+    <body>
+      <AuthProvider>
         {children}
-        <BackToTop/>
-        <Footer/>
-      </body>
-    </html>
+        <BackToTop />
+        <Footer />
+      </AuthProvider>
+    </body>
+  </html>
   );
 }
