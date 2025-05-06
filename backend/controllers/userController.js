@@ -101,3 +101,48 @@ exports.login = async (req, res) => {
   }
 };
 
+
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find().select("-password"); 
+    res.status(200).json({
+      success: true,
+      count: users.length,
+      data: users,
+    });
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch users",
+      error: error.message,
+    });
+  }
+};
+
+exports.updateUserRole = async (req, res) => {
+  const { userId } = req.params; 
+  const { role } = req.body; 
+
+  if (!['ADMIN', 'USER'].includes(role)) {
+    return res.status(400).json({ message: "Invalid role" });
+  }
+
+  try {
+    
+    const user = await User.findByIdAndUpdate(
+      userId,
+      { role },
+      { new: true }
+    );
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json({ message: "Role updated successfully", user });
+  } catch (error) {
+    console.error("Error updating user role:", error);
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};

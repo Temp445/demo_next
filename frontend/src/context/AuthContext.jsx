@@ -1,4 +1,4 @@
-// context/AuthContext.jsx
+
 "use client";
 
 import { createContext, useContext, useState, useEffect } from 'react';
@@ -72,7 +72,7 @@ export function AuthProvider({ children }) {
 
 
 
-  // Check if user has admin role
+  // Check user role
   const checkIsAdmin = () => {
     return isAdmin;
   };
@@ -90,5 +90,5 @@ export function AuthProvider({ children }) {
   );
 }
 
-// Custom hook to use auth context
+
 export const useAuth = () => useContext(AuthContext);

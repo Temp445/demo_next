@@ -12,7 +12,7 @@ import instagram from "../assets/Images/instagram.png";
 
 const Footer = () => {
   return (
-    <div className="bg-[#FFF5F5] mt-10 xl:mt-40 py-8">
+    <div className="bg-[#FFF5F5] mt-10 xl:mt-40 py-8 bottom-0">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
        
         <div className="flex items-center gap-2 mb-8 md:mb-10 ">

@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { LuMessageSquareMore } from 'react-icons/lu';
+import jwtDecode from 'jwt-decode';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -18,18 +19,28 @@ function classNames(...classes) {
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const router = useRouter();
 
-  // Check for token on load
   useEffect(() => {
     const token = localStorage.getItem('token');
-    setIsAuthenticated(!!token);
+    if (token) {
+      setIsAuthenticated(true);
+      try {
+        const decoded = jwtDecode(token);
+        if (decoded.role === 'admin') {
+          setIsAdmin(true);
+        }
+      } catch (err) {
+        console.error('Failed to decode token:', err);
+      }
+    }
   }, []);
 
-  // Handle logout
   const handleLogout = () => {
     localStorage.removeItem('token');
     setIsAuthenticated(false);
+    setIsAdmin(false);
     router.push('/login');
   };
 
@@ -38,29 +49,25 @@ export default function Header() {
     { name: 'Product Enquiry', href: '/ProductEnquire' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'About us', href: '/about' },
+    { name: 'Dashboard', href: '/admin' },
     isAuthenticated
       ? { name: 'Logout', href: '#', onClick: handleLogout }
       : { name: 'Login', href: '/login' },
   ];
 
   return (
-    <div className='w-full z-[200] lg:px-6'>
-      <Disclosure
-        as="nav"
-        className="bg-none lg:bg-white w-full fixed lg:relative z-[200]"
-        open={isOpen}
-        onChange={setIsOpen}
-      >
+    <div className="w-full z-[200] xl:px-6 2xl:container mx-auto">
+      <Disclosure as="nav" className="bg-none lg:bg-white w-full fixed lg:relative z-[200]" open={isOpen} onChange={setIsOpen}>
         {({ open, close }) => (
           <>
-            <div className="mx-auto sm:px-6 lg:px-8 xl:px-0">
+            <div className="mx-auto sm:px-6  xl:px-0">
               <div className="flex h-16 items-center justify-between">
-                {/* Logo - Desktop */}
+           
                 <Link href="/">
                   <div className="hidden lg:flex flex-1 md:items-center lg:justify-start gap-1">
                     <Image src={LogoLg} width={50} height={48} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
-                    <span className="mt-3 flex text-[16px] sm:text-base md:mt-1 font-semibold md:font-normal md:text-lg xl:font-semibold">
-                      ACE <span className=' ml-2'>Software Solutions Pvt. Ltd</span>
+                    <span className="mt-3 flex text-[16px] sm:text-base md:mt-1 font-semibold md:font-normal md:text-lg lg:text-sm xl:font-semibold">
+                      ACE <span className="ml-2">Software Solutions Pvt. Ltd</span>
                     </span>
                   </div>
                 </Link>
@@ -91,7 +98,7 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Bottom Mobile Bar */}
+          
             <div className="lg:hidden -ml-[0.5px] mx-auto lg:px-8 xl:px-0 fixed bottom-0 bg-[#128daf] w-full z-[200] border-l-2 border-white overflow-hidden">
               <div className="flex h-14 items-center justify-between overflow-hidden z-[200]">
                 {/* Mobile Menu Button */}
@@ -101,27 +108,26 @@ export default function Header() {
                     aria-label="Main menu"
                   >
                     {open ? (
-                      <XMarkIcon className="block size-6" aria-hidden="true" />
+                      <XMarkIcon className="block size-6" aria-hidden="true"/>
                     ) : (
                       <IoReorderThreeOutline className="block justify-end size-7.5 font-black" aria-hidden="true" />
                     )}
                   </Disclosure.Button>
                 </div>
 
-                {/* Logo - Mobile */}
-                <Link href="/" className='lg:hidden font-bold text-[16px] px-5 text-white py-2 items-center text-center ml-2 flex gap-1'>
+              
+                <Link href="/" className="lg:hidden font-bold text-[16px] px-5 text-white py-2 items-center text-center ml-2 flex gap-1">
                   <Image src={Logo} width={32} height={32} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
-                  <span className='mt-0.5'> ACE Software Solutions</span> <span className='hidden md:block'>Pvt. Ltd</span>
+                  <span className="mt-0.5"> ACE Software Solutions</span> <span className="hidden md:block">Pvt. Ltd</span>
                 </Link>
 
-                {/* Message icon */}
-                <Link href="/Demo" className='lg:hidden font-bold w-16 justify-center text-center border-l-2 border-white text-white h-16 items-center overflow-hidden'>
-                  <LuMessageSquareMore className='text-3xl mt-4 ml-4' />
+                <Link href="/Demo" className="lg:hidden font-bold w-16 justify-center text-center border-l-2 border-white text-white h-16 items-center overflow-hidden">
+                  <LuMessageSquareMore className="text-3xl mt-4 ml-4" />
                 </Link>
               </div>
             </div>
 
-            {/* Mobile Menu Panel */}
+        
             <Disclosure.Panel className="lg:hidden fixed bg-white w-3/4 z-[100] bottom-16 rounded-lg shadow-lg">
               <div className="space-y-1 px-4 pt-2 pb-3 flex-col flex items-start">
                 {navigation.map((item) => (

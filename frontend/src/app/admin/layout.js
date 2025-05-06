@@ -6,7 +6,6 @@ const admin = ({children}) => {
   return (
     <div>
         <AdminProtectedRoute>
-      
         <Header/>
         {children}
         </AdminProtectedRoute>

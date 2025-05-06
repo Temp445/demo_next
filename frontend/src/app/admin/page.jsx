@@ -5,6 +5,7 @@ import Link from "next/link";
 import { IoAddCircle } from "react-icons/io5";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaRegEdit } from "react-icons/fa";
+import { FaUsersCog } from "react-icons/fa";
 import axios from "axios";
 
 import AdminProtectedRoute from '@/components/ProtectedRoute';
@@ -72,13 +73,22 @@ const Dashboard = () => {
      <div className="max-w-6xl mx-auto my-12 p-6 border-0 bg-white lg:border lg:border-gray-300 rounded-lg shadow-md">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-gray-800">Product List</h2>
+       <div className="flex gap-5">
+       <Link
+          href="/user"
+          className="flex text-[12px] lg:text-[14px] items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition "
+        >
+          <FaUsersCog className=" text-[14px] lg:text-xl mb-1" />
+          User List
+        </Link>
         <Link
           href="/admin/upload"
           className="flex text-[12px] lg:text-[14px] items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition "
         >
-          <IoAddCircle className=" text-[14px] lg:text-xl" />
+          <IoAddCircle className=" text-[14px] lg:text-xl mb-0.5" />
           Add New Product
         </Link>
+       </div>
       </div>
 
       {/* Category Filter */}
