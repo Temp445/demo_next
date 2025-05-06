@@ -108,13 +108,14 @@ const HomePage = () => {
     <div className="w-full mx-auto justify-center items-center xxl:container">
        <Header/>
       {/* Hero Section*/}
+      <div className="bg-[#FFF5F5]">
       <motion.section 
         ref={heroRef}
         initial="hidden"
         animate={heroControls}
-        className="flex flex-col-reverse lg:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 py-0 sm:py-10 bg-[#FFF5F5]"
+        className="flex flex-col-reverse lg:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 py-0 sm:py-10 container mx-auto"
       >
- <div className="container flex mx-auto">
+
         <div className="w-full lg:w-1/2 xl:px-6 ">
           <motion.div 
             variants={staggerContainer}
@@ -123,7 +124,7 @@ const HomePage = () => {
             <motion.h1 
               variants={fadeIn}
               custom={0}
-              className="text-3xl sm:text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-bold text-[#F7666F] text-left md:text-center lg:text-left mb-4 sm:mb-6 lg:h-28  overflow-hidden"
+              className="text-3xl sm:text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-bold text-[#F7666F] text-left md:text-center lg:text-left mb-4 sm:mb-6 lg:h-28 overflow-hidden"
             >
               Great Product is built <br className="block" />
               <span className="text-[#403D3D]">by great teams</span>
@@ -184,8 +185,8 @@ const HomePage = () => {
             <source src="/videos/LandingVideo.mp4" type="video/mp4" />
           </video>
         </motion.div>
- </div>
       </motion.section>
+      </div>
 
       {/* About Section */}
       <motion.div 
