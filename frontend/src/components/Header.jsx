@@ -56,7 +56,7 @@ export default function Header() {
   ];
 
   return (
-    <div className="w-full z-[200] xl:px-6 2xl:container mx-auto">
+    <div className="w-full z-[200] 2xl:px-6 container mx-auto">
       <Disclosure as="nav" className="bg-none lg:bg-white w-full fixed lg:relative z-[200]" open={isOpen} onChange={setIsOpen}>
         {({ open, close }) => (
           <>
@@ -66,8 +66,8 @@ export default function Header() {
                 <Link href="/">
                   <div className="hidden lg:flex flex-1 md:items-center lg:justify-start gap-1">
                     <Image src={LogoLg} width={50} height={48} alt="Company Logo" className="h-10 pl-2 xl:h-10" />
-                    <span className="mt-3 flex text-[16px] sm:text-base md:mt-1 font-semibold md:font-normal md:text-lg lg:text-sm xl:font-semibold">
-                      ACE <span className="ml-2">Software Solutions Pvt. Ltd</span>
+                    <span className="mt-3 flex text-[16px] sm:text-base md:mt-1 font-semibold md:font-normal md:text-lg  xl:font-semibold">
+                      ACE <span className="ml-2">Software Solutions </span> <span className='hidden xl:flex ml-2'>Pvt. Ltd</span>
                     </span>
                   </div>
                 </Link>
