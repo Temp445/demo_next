@@ -10,7 +10,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { LuMessageSquareMore } from 'react-icons/lu';
-import jwtDecode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
